@@ -7,4 +7,3 @@
 import {
     ServerEvent
 } from './indexServerEvent';
-window.ServerEvent = ServerEvent;

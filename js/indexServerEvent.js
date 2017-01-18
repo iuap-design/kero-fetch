@@ -10,17 +10,17 @@ import {
     addDataTables,
     addAllDataTables,
     updateDataTables
-} from 'kero/js/app/server-dataTable';
+} from './server-dataTable';
 
 import {
     fire,
     setSuccessFunc,
     _successFunc
-} from 'kero/js/app/server-fire';
+} from './server-fire';
 
 import {
     processXHRError
-} from 'kero/js/app/server-processXHRError';
+} from './server-processXHRError';
 
 import {
     setCompression,
@@ -28,7 +28,7 @@ import {
     setEvent,
     getData,
     updateDom
-} from 'kero/js/app/server-util'
+} from './server-util'
 
 class ServerEvent {
     constructor(app){
@@ -73,7 +73,4 @@ ServerEvent.DEFAULT = {
     url: (window.$ctx || '/iwebap') + '/evt/dispatch'
 }
 
-
-export {
-    ServerEvent
-}
+window.ServerEvent = ServerEvent;
