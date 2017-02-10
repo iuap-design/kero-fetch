@@ -29,7 +29,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.8",
-    "tinper-sparrow": "^3.1.22"
+    "tinper-sparrow": "^3.1.22",
+    "compox": "^1.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
