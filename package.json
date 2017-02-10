@@ -1,6 +1,6 @@
 {
   "name": "kero-fetch",
-  "version": "3.1.24",
+  "version": "3.1.25",
   "description": "kero-fetch - 基于 Promise 实现的 http 库",
   "main": "webpack.config.js",
   "scripts": {
@@ -23,14 +23,14 @@
   },
   "homepage": "https://github.com/iuap-design/kero-fetch#readme",
   "dependencies": {
+    "compox": "^3.1.25",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-minify-css": "^1.2.4",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.8",
-    "tinper-sparrow": "^3.1.22",
-    "compox": "^1.0.0"
+    "tinper-sparrow": "^3.1.25"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
