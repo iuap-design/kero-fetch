@@ -1,6 +1,6 @@
 {
   "name": "kero-fetch",
-  "version": "1.0.0",
+  "version": "3.1.22",
   "description": "kero-fetch - 基于 Promise 实现的 http 库",
   "main": "webpack.config.js",
   "scripts": {
