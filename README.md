@@ -1,23 +1,53 @@
-# kero-fetch
 
-`kero-fetch`主要是提供向服务器请求数据的时候提供请求和处理数据的方法
+[![npm version](https://img.shields.io/npm/v/kero-fetch.svg)](https://www.npmjs.com/package/kero-fetch)
+[![Build Status](https://img.shields.io/travis/iuap-design/kero-fetch/master.svg)](https://travis-ci.org/iuap-design/kero-fetch)
+[![devDependency Status](https://img.shields.io/david/dev/iuap-design/kero-fetch.svg)](https://david-dm.org/iuap-design/kero-fetch#info=devDependencies)
+[![NPM downloads](http://img.shields.io/npm/dm/kero-fetch.svg?style=flat)](https://npmjs.org/package/kero-fetch)
 
-## 开发技术说明
 
-* 基于Webpack构建资源.
-* 使用ES6语法特性.
-* 导出[umd](https://github.com/umdjs/umd)格式文件，随处使用.
-* 使用[Mocha](http://mochajs.org/) 和 [Chai](http://chaijs.com/) 进行项目测试.
-* [ESLint](http://eslint.org/)帮助我们进行代码规范检测.
+[中文文档](./README_CN.md)
+##  Introduction
+`kero-fetch` mainly provides the way to interact with the server,needs to be combined with the background data model
 
-## 如何开发
+## Contributing
 
-安装依赖
+
+### Feedback
+
+If you encounter any problems , submit [issues](https://github.com/iuap-design/kero-fetch/issues),or pull request。
+
+[PR code](CONTRIBUTING.md)
+
+### Develop
+
+Developers can participate in the development of kero-fetch,  but also can be based on kero-fetch two development
+
+
+kero-fetch use gulp.js and webpack build the project.
+
+
+clone：
+
+```
+$ git clone git@github.com:iuap-design/kero-fetch.git
+```
+
+install：
+
 ```
 $ npm install
 ```
 
-编译产出
+build：
+
 ```
 $ npm run product
 ```
+
+### Website Chat Group
+
+527124070
+
+## Licence 版权
+
+[MIT](./LICENSE)
