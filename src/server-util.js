@@ -3,9 +3,9 @@
  * Author : liuyk(liuyk@yonyou.com)
  * Date   : 2016-07-29 09:34:01
  */
-import {each} from 'tinper-sparrow/js/util';
-import {trigger} from 'tinper-sparrow/js/event';
-import {env} from 'tinper-sparrow/js/env';
+import {each} from 'tinper-sparrow/src/util';
+import {trigger} from 'tinper-sparrow/src/event';
+import {env} from 'tinper-sparrow/src/env';
 
 const setCompression = function (compression) {
     if (!env.isIE8 && !window.pako && compression == true)

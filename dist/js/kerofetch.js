@@ -1,3 +1,10 @@
+/*!
+ * kero-fetch v3.1.25
+ * kero-fetch - 基于 Promise 实现的 http 库
+ * author : 
+ * homepage : https://github.com/iuap-design/kero-fetch#readme
+ * bugs : https://github.com/iuap-design/kero-fetch/issues
+ */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -50,9 +57,9 @@
 
 	var _serverFire = __webpack_require__(3);
 
-	var _serverProcessXHRError = __webpack_require__(8);
+	var _serverProcessXHRError = __webpack_require__(9);
 
-	var _serverUtil = __webpack_require__(9);
+	var _serverUtil = __webpack_require__(10);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } } /**
 	                                                                                                                                                           * Module : Kero webpack entry serverEvnet index
@@ -114,7 +121,9 @@
 
 	'use strict';
 
-	exports.__esModule = true;
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 	exports.updateDataTables = exports.addAllDataTables = exports.addDataTables = exports.addDataTable = undefined;
 
 	var _util = __webpack_require__(2);
@@ -188,7 +197,9 @@
 
 	'use strict';
 
-	exports.__esModule = true;
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -348,7 +359,9 @@
 
 	'use strict';
 
-	exports.__esModule = true;
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 	exports.setSuccessFunc = exports._successFunc = exports.fire = undefined;
 
 	var _extend = __webpack_require__(4);
@@ -433,7 +446,9 @@
 
 	'use strict';
 
-	exports.__esModule = true;
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
 	exports.extend = undefined;
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; /**
@@ -483,7 +498,9 @@
 
 	"use strict";
 
-	exports.__esModule = true;
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
 	/**
 	 * Module : Sparrow extend enum
 	 * Author : Kvkens(yueming@yonyou.com)
@@ -519,7 +536,9 @@
 
 	"use strict";
 
-	exports.__esModule = true;
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
 	exports.ajax = undefined;
 
 	var _env = __webpack_require__(7);
@@ -643,10 +662,12 @@
 
 	'use strict';
 
-	exports.__esModule = true;
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
 	exports.env = undefined;
 
-	var _extend = __webpack_require__(4);
+	var _extend = __webpack_require__(8);
 
 	var u = {}; /**
 	             * Module : Sparrow browser environment
@@ -846,11 +867,65 @@
 
 /***/ },
 /* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.extend = undefined;
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; /**
+	                                                                                                                                                                                                                                                                               * Module : Sparrow extend
+	                                                                                                                                                                                                                                                                               * Author : Kvkens(yueming@yonyou.com)
+	                                                                                                                                                                                                                                                                               * Date	  : 2016-07-27 21:46:50
+	                                                                                                                                                                                                                                                                               */
+
+	var _enumerables = __webpack_require__(5);
+
+	/**
+	 * 复制对象属性
+	 *
+	 * @param {Object}  目标对象
+	 * @param {config} 源对象
+	 */
+	var extend = function extend(object, config) {
+		var args = arguments,
+		    options;
+		if (args.length > 1) {
+			for (var len = 1; len < args.length; len++) {
+				options = args[len];
+				if (object && options && (typeof options === 'undefined' ? 'undefined' : _typeof(options)) === 'object') {
+					var i, j, k;
+					for (i in options) {
+						object[i] = options[i];
+					}
+					if (_enumerables.enumerables) {
+						for (j = _enumerables.enumerables.length; j--;) {
+							k = _enumerables.enumerables[j];
+							if (options.hasOwnProperty && options.hasOwnProperty(k)) {
+								object[k] = options[k];
+							}
+						}
+					}
+				}
+			}
+		}
+		return object;
+	};
+
+	exports.extend = extend;
+
+/***/ },
+/* 9 */
 /***/ function(module, exports) {
 
 	"use strict";
 
-	exports.__esModule = true;
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 	/**
 	 * Module : kero app serverEvent processXHRError
 	 * Author : liuyk(liuyk@yonyou.com)
@@ -874,19 +949,21 @@
 	exports.processXHRError = processXHRError;
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	exports.__esModule = true;
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 	exports.updateDom = exports.getData = exports.setEvent = exports.addParameter = exports.setCompression = undefined;
 
 	var _util = __webpack_require__(2);
 
-	var _event = __webpack_require__(10);
+	var _event = __webpack_require__(11);
 
-	var _env = __webpack_require__(7);
+	var _env = __webpack_require__(12);
 
 	var setCompression = function setCompression(compression) {
 	    if (!_env.env.isIE8 && !window.pako && compression == true) alert("can't compression, please include  pako!");else this.compression = compression;
@@ -978,12 +1055,14 @@
 	exports.updateDom = updateDom;
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	exports.__esModule = true;
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
 	exports.event = exports.stopEvent = exports.trigger = exports.off = exports.on = undefined;
 
 	var _env = __webpack_require__(7);
@@ -1368,6 +1447,215 @@
 	exports.trigger = trigger;
 	exports.stopEvent = stopEvent;
 	exports.event = event;
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.env = undefined;
+
+	var _extend = __webpack_require__(8);
+
+	var u = {}; /**
+	             * Module : Sparrow browser environment
+	             * Author : Kvkens(yueming@yonyou.com)
+	             * Date	  : 2016-07-27 21:46:50
+	             */
+
+	(0, _extend.extend)(u, {
+		isIE: false,
+		isFF: false,
+		isOpera: false,
+		isChrome: false,
+		isSafari: false,
+		isWebkit: false,
+		isIE8_BEFORE: false,
+		isIE8: false,
+		isIE8_CORE: false,
+		isIE9: false,
+		isIE9_CORE: false,
+		isIE10: false,
+		isIE10_ABOVE: false,
+		isIE11: false,
+		isEdge: false,
+		isIOS: false,
+		isIphone: false,
+		isIPAD: false,
+		isStandard: false,
+		version: 0,
+		isWin: false,
+		isUnix: false,
+		isLinux: false,
+		isAndroid: false,
+		isAndroidPAD: false,
+		isAndroidPhone: false,
+		isMac: false,
+		hasTouch: false,
+		isMobile: false
+	});
+
+	(function () {
+		var userAgent = navigator.userAgent,
+		    rMsie = /(msie\s|trident.*rv:)([\w.]+)/,
+		    rFirefox = /(firefox)\/([\w.]+)/,
+		    rOpera = /(opera).+version\/([\w.]+)/,
+		    rChrome = /(chrome)\/([\w.]+)/,
+		    rSafari = /version\/([\w.]+).*(safari)/,
+		    version,
+		    ua = userAgent.toLowerCase(),
+		    s,
+		    browserMatch = {
+			browser: "",
+			version: ''
+		},
+		    match = rMsie.exec(ua);
+
+		if (match != null) {
+			browserMatch = {
+				browser: "IE",
+				version: match[2] || "0"
+			};
+		}
+		match = rFirefox.exec(ua);
+		if (match != null) {
+			browserMatch = {
+				browser: match[1] || "",
+				version: match[2] || "0"
+			};
+		}
+		match = rOpera.exec(ua);
+		if (match != null) {
+			browserMatch = {
+				browser: match[1] || "",
+				version: match[2] || "0"
+			};
+		}
+		match = rChrome.exec(ua);
+		if (match != null) {
+			browserMatch = {
+				browser: match[1] || "",
+				version: match[2] || "0"
+			};
+		}
+		match = rSafari.exec(ua);
+		if (match != null) {
+			browserMatch = {
+				browser: match[2] || "",
+				version: match[1] || "0"
+			};
+		}
+
+		if (userAgent.indexOf("Edge") > -1) {
+			u.isEdge = true;
+		}
+		if (s = ua.match(/opera.([\d.]+)/)) {
+			u.isOpera = true;
+		} else if (browserMatch.browser == "IE" && browserMatch.version == 11) {
+			u.isIE11 = true;
+			u.isIE = true;
+		} else if (s = ua.match(/chrome\/([\d.]+)/)) {
+			u.isChrome = true;
+			u.isStandard = true;
+		} else if (s = ua.match(/version\/([\d.]+).*safari/)) {
+			u.isSafari = true;
+			u.isStandard = true;
+		} else if (s = ua.match(/gecko/)) {
+			//add by licza : support XULRunner
+			u.isFF = true;
+			u.isStandard = true;
+		} else if (s = ua.match(/msie ([\d.]+)/)) {
+			u.isIE = true;
+		} else if (s = ua.match(/firefox\/([\d.]+)/)) {
+			u.isFF = true;
+			u.isStandard = true;
+		}
+		if (ua.match(/webkit\/([\d.]+)/)) {
+			u.isWebkit = true;
+		}
+		if (ua.match(/ipad/i)) {
+			u.isIOS = true;
+			u.isIPAD = true;
+			u.isStandard = true;
+		}
+
+		if (ua.match(/iphone/i)) {
+			u.isIOS = true;
+			u.isIphone = true;
+		}
+
+		if (navigator.platform == "Mac68K" || navigator.platform == "MacPPC" || navigator.platform == "Macintosh" || navigator.platform == "MacIntel") {
+			//u.isIOS = true;
+			u.isMac = true;
+		}
+
+		if (navigator.platform == "Win32" || navigator.platform == "Windows" || navigator.platform == "Win64") {
+			u.isWin = true;
+		}
+
+		if (navigator.platform == "X11" && !u.isWin && !u.isMac) {
+			u.isUnix = true;
+		}
+		if (String(navigator.platform).indexOf("Linux") > -1) {
+			u.isLinux = true;
+		}
+
+		if (ua.indexOf('Android') > -1 || ua.indexOf('android') > -1 || ua.indexOf('Adr') > -1 || ua.indexOf('adr') > -1) {
+			u.isAndroid = true;
+		}
+
+		u.version = version ? browserMatch.version ? browserMatch.version : 0 : 0;
+		if (u.isAndroid) {
+			if (window.screen.width >= 768 && window.screen.width < 1024) {
+				u.isAndroidPAD = true;
+			}
+			if (window.screen.width <= 768) {
+				u.isAndroidPhone = true;
+			}
+		}
+		if (u.isIE) {
+			var intVersion = parseInt(u.version);
+			var mode = document.documentMode;
+			if (mode == null) {
+				if (intVersion == 6 || intVersion == 7) {
+					u.isIE8_BEFORE = true;
+				}
+			} else {
+				if (mode == 7) {
+					u.isIE8_BEFORE = true;
+				} else if (mode == 8) {
+					u.isIE8 = true;
+				} else if (mode == 9) {
+					u.isIE9 = true;
+					u.isSTANDARD = true;
+				} else if (mode == 10) {
+					u.isIE10 = true;
+					u.isSTANDARD = true;
+					u.isIE10_ABOVE = true;
+				} else {
+					u.isSTANDARD = true;
+				}
+				if (intVersion == 8) {
+					u.isIE8_CORE = true;
+				} else if (intVersion == 9) {
+					u.isIE9_CORE = true;
+				} else if (browserMatch.version == 11) {
+					u.isIE11 = true;
+				}
+			}
+		}
+		if ("ontouchend" in document) {
+			u.hasTouch = true;
+		}
+		if (u.isIphone || u.isAndroidPhone) u.isMobile = true;
+	})();
+
+	var env = u;
+	exports.env = env;
 
 /***/ }
 /******/ ]);
