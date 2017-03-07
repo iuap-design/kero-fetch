@@ -4,7 +4,7 @@ var path = require('path');
 var env = require('yargs').argv.mode;
 var fs = require('fs');
 
-var libraryName = 'kerofetch';
+var libraryName = 'kero-fetch';
 
 var data = fs.readFileSync('./package.json', 'utf8');
 var packageObj = JSON.parse(data);
@@ -29,7 +29,7 @@ if(env === 'build') {
 var config = {
 	entry: __dirname + '/src/index.js',
 	output: {
-		path: __dirname + '/dist/js',
+		path: __dirname + '/dist',
 		filename: outputFile,
 		libraryTarget: 'var',
 		umdNamedDefine: true
