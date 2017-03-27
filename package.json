@@ -1,6 +1,6 @@
 {
   "name": "kero-fetch",
-  "version": "3.1.26",
+  "version": "3.2.0",
   "description": "kero-fetch - 基于 Promise 实现的 http 库",
   "main": "webpack.config.js",
   "scripts": {
@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/iuap-design/kero-fetch#readme",
   "dependencies": {
-    "compox": "^3.1.26",
-    "tinper-sparrow": "^3.1.26"
+    "compox": "^3.2.0",
+    "tinper-sparrow": "^3.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",

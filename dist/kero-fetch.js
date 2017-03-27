@@ -1,5 +1,5 @@
 /*!
- * kero-fetch v3.1.26
+ * kero-fetch v3.2.0
  * kero-fetch - 基于 Promise 实现的 http 库
  * author : 
  * homepage : https://github.com/iuap-design/kero-fetch#readme
@@ -34,7 +34,7 @@
         return __webpack_require__.d(getter, "a", getter), getter;
     }, __webpack_require__.o = function(object, property) {
         return Object.prototype.hasOwnProperty.call(object, property);
-    }, __webpack_require__.p = "", __webpack_require__(__webpack_require__.s = 10);
+    }, __webpack_require__.p = "", __webpack_require__(__webpack_require__.s = 7);
 }([ function(module, __webpack_exports__, __webpack_require__) {
     "use strict";
     var __WEBPACK_IMPORTED_MODULE_0__extend__ = __webpack_require__(1);
@@ -73,7 +73,7 @@
         hasTouch: !1,
         isMobile: !1
     }), function() {
-        var version, userAgent = navigator.userAgent, rMsie = /(msie\s|trident.*rv:)([\w.]+)/, rFirefox = /(firefox)\/([\w.]+)/, rOpera = /(opera).+version\/([\w.]+)/, rChrome = /(chrome)\/([\w.]+)/, rSafari = /version\/([\w.]+).*(safari)/, ua = userAgent.toLowerCase(), browserMatch = {
+        var userAgent = navigator.userAgent, rMsie = /(msie\s|trident.*rv:)([\w.]+)/, rFirefox = /(firefox)\/([\w.]+)/, rOpera = /(opera).+version\/([\w.]+)/, rChrome = /(chrome)\/([\w.]+)/, rSafari = /version\/([\w.]+).*(safari)/, ua = userAgent.toLowerCase(), browserMatch = {
             browser: "",
             version: ""
         }, match = rMsie.exec(ua);
@@ -101,7 +101,7 @@
         "Win32" != navigator.platform && "Windows" != navigator.platform && "Win64" != navigator.platform || (u.isWin = !0), 
         "X11" != navigator.platform || u.isWin || u.isMac || (u.isUnix = !0), String(navigator.platform).indexOf("Linux") > -1 && (u.isLinux = !0), 
         (ua.indexOf("Android") > -1 || ua.indexOf("android") > -1 || ua.indexOf("Adr") > -1 || ua.indexOf("adr") > -1) && (u.isAndroid = !0), 
-        u.version = version && browserMatch.version ? browserMatch.version : 0, u.isAndroid && (window.screen.width >= 768 && window.screen.width < 1024 && (u.isAndroidPAD = !0), 
+        u.version = 0, u.isAndroid && (window.screen.width >= 768 && window.screen.width < 1024 && (u.isAndroidPAD = !0), 
         window.screen.width <= 768 && (u.isAndroidPhone = !0)), u.isIE) {
             var intVersion = parseInt(u.version), mode = document.documentMode;
             null == mode ? 6 != intVersion && 7 != intVersion || (u.isIE8_BEFORE = !0) : (7 == mode ? u.isIE8_BEFORE = !0 : 8 == mode ? u.isIE8 = !0 : 9 == mode ? (u.isIE9 = !0, 
@@ -113,7 +113,7 @@
     var env = u;
 }, function(module, __webpack_exports__, __webpack_require__) {
     "use strict";
-    var __WEBPACK_IMPORTED_MODULE_0__enumerables__ = __webpack_require__(8);
+    var __WEBPACK_IMPORTED_MODULE_0__enumerables__ = __webpack_require__(9);
     __webpack_require__.d(__webpack_exports__, "a", function() {
         return extend;
     });
@@ -128,6 +128,7 @@
         }
         return object;
     };
+    Object.assign || (Object.assign = extend);
 }, function(module, __webpack_exports__, __webpack_require__) {
     "use strict";
     __webpack_require__.d(__webpack_exports__, "b", function() {
@@ -189,7 +190,7 @@
     };
 }, function(module, __webpack_exports__, __webpack_require__) {
     "use strict";
-    var __WEBPACK_IMPORTED_MODULE_0_tinper_sparrow_src_extend__ = __webpack_require__(1), __WEBPACK_IMPORTED_MODULE_1_tinper_sparrow_src_ajax__ = __webpack_require__(7);
+    var __WEBPACK_IMPORTED_MODULE_0_tinper_sparrow_src_extend__ = __webpack_require__(1), __WEBPACK_IMPORTED_MODULE_1_tinper_sparrow_src_ajax__ = __webpack_require__(8);
     __webpack_require__.d(__webpack_exports__, "a", function() {
         return fire;
     }), __webpack_require__.d(__webpack_exports__, "c", function() {
@@ -261,7 +262,7 @@
             }
         }
     }
-    var __WEBPACK_IMPORTED_MODULE_0_tinper_sparrow_src_util__ = __webpack_require__(2), __WEBPACK_IMPORTED_MODULE_1_tinper_sparrow_src_event__ = __webpack_require__(9), __WEBPACK_IMPORTED_MODULE_2_tinper_sparrow_src_env__ = __webpack_require__(0);
+    var __WEBPACK_IMPORTED_MODULE_0_tinper_sparrow_src_util__ = __webpack_require__(2), __WEBPACK_IMPORTED_MODULE_1_tinper_sparrow_src_event__ = __webpack_require__(10), __WEBPACK_IMPORTED_MODULE_2_tinper_sparrow_src_env__ = __webpack_require__(0);
     __webpack_require__.d(__webpack_exports__, "a", function() {
         return setCompression;
     }), __webpack_require__.d(__webpack_exports__, "b", function() {
@@ -302,6 +303,34 @@
     };
 }, function(module, __webpack_exports__, __webpack_require__) {
     "use strict";
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
+    }
+    Object.defineProperty(__webpack_exports__, "__esModule", {
+        value: !0
+    });
+    var __WEBPACK_IMPORTED_MODULE_0__server_dataTable__ = __webpack_require__(3), __WEBPACK_IMPORTED_MODULE_1__server_fire__ = __webpack_require__(4), __WEBPACK_IMPORTED_MODULE_2__server_processXHRError__ = __webpack_require__(5), __WEBPACK_IMPORTED_MODULE_3__server_util__ = __webpack_require__(6), ServerEvent = function ServerEvent(app) {
+        _classCallCheck(this, ServerEvent), this.app = app, this.datas = {}, this.params = {}, 
+        this.event = null, this.ent = u.core.collectEnvironment(), u.debugMode || (this.compression = !0);
+    };
+    ServerEvent.prototype.addDataTable = __WEBPACK_IMPORTED_MODULE_0__server_dataTable__.a, 
+    ServerEvent.prototype.addDataTables = __WEBPACK_IMPORTED_MODULE_0__server_dataTable__.b, 
+    ServerEvent.prototype.addAllDataTables = __WEBPACK_IMPORTED_MODULE_0__server_dataTable__.c, 
+    ServerEvent.prototype.updateDataTables = __WEBPACK_IMPORTED_MODULE_0__server_dataTable__.d, 
+    ServerEvent.prototype.fire = __WEBPACK_IMPORTED_MODULE_1__server_fire__.a, ServerEvent.prototype.setSuccessFunc = __WEBPACK_IMPORTED_MODULE_1__server_fire__.b, 
+    ServerEvent.prototype._successFunc = __WEBPACK_IMPORTED_MODULE_1__server_fire__.c, 
+    ServerEvent.prototype.processXHRError = __WEBPACK_IMPORTED_MODULE_2__server_processXHRError__.a, 
+    ServerEvent.prototype.setCompression = __WEBPACK_IMPORTED_MODULE_3__server_util__.a, 
+    ServerEvent.prototype.addParameter = __WEBPACK_IMPORTED_MODULE_3__server_util__.b, 
+    ServerEvent.prototype.setEvent = __WEBPACK_IMPORTED_MODULE_3__server_util__.c, ServerEvent.prototype.getData = __WEBPACK_IMPORTED_MODULE_3__server_util__.d, 
+    ServerEvent.prototype.updateDom = __WEBPACK_IMPORTED_MODULE_3__server_util__.e, 
+    ServerEvent.DEFAULT = {
+        async: !0,
+        singleton: !0,
+        url: (window.$ctx || "/iwebap") + "/evt/dispatch"
+    }, window.ServerEvent = ServerEvent;
+}, function(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
     var __WEBPACK_IMPORTED_MODULE_0__env__ = __webpack_require__(0);
     __webpack_require__.d(__webpack_exports__, "a", function() {
         return ajax;
@@ -335,7 +364,7 @@
         },
         serializeUrl: function(url) {
             var cache = "cache=" + Math.random();
-            return url += url.indexOf("?") > 0 ? "&" + cache : "?" + cache;
+            return url.indexOf("?") > 0 ? url += "&" + cache : url += "?" + cache, url;
         },
         serializeParams: function(params) {
             if (void 0 == params || null == params || "" == params) return null;
@@ -360,173 +389,10 @@
     enumerables && (enumerables = [ "hasOwnProperty", "valueOf", "isPrototypeOf", "propertyIsEnumerable", "toLocaleString", "toString", "constructor" ]);
 }, function(module, __webpack_exports__, __webpack_require__) {
     "use strict";
-    var __WEBPACK_IMPORTED_MODULE_0__env__ = __webpack_require__(0);
     __webpack_require__.d(__webpack_exports__, "a", function() {
         return trigger;
     });
-    var u = {};
-    u.event = {};
-    var touchStartEvent = __WEBPACK_IMPORTED_MODULE_0__env__.a.hasTouch ? "touchstart" : "mousedown", touchStopEvent = __WEBPACK_IMPORTED_MODULE_0__env__.a.hasTouch ? "touchend" : "mouseup", touchMoveEvent = __WEBPACK_IMPORTED_MODULE_0__env__.a.hasTouch ? "touchmove" : "mousemove";
-    u.event.tap = {
-        tapholdThreshold: 750,
-        emitTapOnTaphold: !0,
-        touchstartFun: function() {
-            trigger(this, "vmousedown");
-        },
-        touchendFun: function() {
-            trigger(this, "vmouseup"), trigger(this, "vclick");
-        },
-        setup: function() {
-            var thisObject = this, isTaphold = !1;
-            on(thisObject, "vmousedown", function(event) {
-                function clearTapTimer() {
-                    clearTimeout(timer);
-                }
-                function clearTapHandlers() {
-                    clearTapTimer(), off(thisObject, "vclick"), off(thisObject, "vmouseup"), off(document, "vmousecancel");
-                }
-                function clickHandler(event) {
-                    clearTapHandlers(), isTaphold || origTarget !== event.target ? isTaphold && event.preventDefault() : trigger(thisObject, "tap");
-                }
-                if (isTaphold = !1, event.which && 1 !== event.which) return !1;
-                var timer, origTarget = event.target;
-                on(thisObject, "vmouseup", clearTapTimer), on(thisObject, "vclick", clickHandler), 
-                on(document, "vmousecancel", clearTapHandlers), timer = setTimeout(function() {
-                    u.event.tap.emitTapOnTaphold || (isTaphold = !0), trigger(thisObject, "taphold"), 
-                    clearTapHandlers();
-                }, u.event.tap.tapholdThreshold);
-            }), on(thisObject, "touchstart", u.event.tap.touchstartFun), on(thisObject, "touchend", u.event.tap.touchendFun);
-        },
-        teardown: function() {
-            off(thisObject, "vmousedown"), off(thisObject, "vclick"), off(thisObject, "vmouseup"), 
-            off(document, "vmousecancel");
-        }
-    }, u.event.taphold = u.event.tap, u.event.swipe = {
-        scrollSupressionThreshold: 30,
-        durationThreshold: 1e3,
-        horizontalDistanceThreshold: 30,
-        verticalDistanceThreshold: 30,
-        getLocation: function(event) {
-            var winPageX = window.pageXOffset, winPageY = window.pageYOffset, x = event.clientX, y = event.clientY;
-            return 0 === event.pageY && Math.floor(y) > Math.floor(event.pageY) || 0 === event.pageX && Math.floor(x) > Math.floor(event.pageX) ? (x -= winPageX, 
-            y -= winPageY) : (y < event.pageY - winPageY || x < event.pageX - winPageX) && (x = event.pageX - winPageX, 
-            y = event.pageY - winPageY), {
-                x: x,
-                y: y
-            };
-        },
-        start: function(event) {
-            var data = event.touches ? event.touches[0] : event, location = u.event.swipe.getLocation(data);
-            return {
-                time: new Date().getTime(),
-                coords: [ location.x, location.y ],
-                origin: event.target
-            };
-        },
-        stop: function(event) {
-            var data = event.touches ? event.touches[0] : event, location = u.event.swipe.getLocation(data);
-            return {
-                time: new Date().getTime(),
-                coords: [ location.x, location.y ]
-            };
-        },
-        handleSwipe: function(start, stop, thisObject, origTarget) {
-            if (stop.time - start.time < u.event.swipe.durationThreshold && Math.abs(start.coords[0] - stop.coords[0]) > u.event.swipe.horizontalDistanceThreshold && Math.abs(start.coords[1] - stop.coords[1]) < u.event.swipe.verticalDistanceThreshold) {
-                var direction = start.coords[0] > stop.coords[0] ? "swipeleft" : "swiperight";
-                return trigger(thisObject, "swipe"), trigger(thisObject, direction), !0;
-            }
-            return !1;
-        },
-        eventInProgress: !1,
-        setup: function() {
-            var events, thisObject = this, context = {};
-            events = thisObject["mobile-events"], events || (events = {
-                length: 0
-            }, thisObject["mobile-events"] = events), events.length++, events.swipe = context, 
-            context.start = function(event) {
-                if (!u.event.swipe.eventInProgress) {
-                    u.event.swipe.eventInProgress = !0;
-                    var stop, start = u.event.swipe.start(event), origTarget = event.target, emitted = !1;
-                    context.move = function(event) {
-                        start && (stop = u.event.swipe.stop(event), emitted || (emitted = u.event.swipe.handleSwipe(start, stop, thisObject, origTarget)) && (u.event.swipe.eventInProgress = !1), 
-                        Math.abs(start.coords[0] - stop.coords[0]) > u.event.swipe.scrollSupressionThreshold && event.preventDefault());
-                    }, context.stop = function() {
-                        emitted = !0, u.event.swipe.eventInProgress = !1, off(document, touchMoveEvent, context.move), 
-                        context.move = null;
-                    }, on(document, touchMoveEvent, context.move), on(document, touchStopEvent, context.stop);
-                }
-            }, on(thisObject, touchStartEvent, context.start);
-        },
-        teardown: function() {
-            var events, context;
-            events = thisObject["mobile-events"], events && (context = events.swipe, delete events.swipe, 
-            0 === --events.length && (thisObject["mobile-events"] = null)), context && (context.start && off(thisObject, touchStartEvent, context.start), 
-            context.move && off(document, touchMoveEvent, context.move), context.stop && off(document, touchStopEvent, context.stop));
-        }
-    }, u.event.swipeleft = u.event.swipe, u.event.swiperight = u.event.swipe;
-    var event = u.event, on = function(element, eventName, child, listener) {
-        if (element) {
-            if (arguments.length < 4) listener = child, child = void 0; else var childlistener = function(e) {
-                if (e) {
-                    element.querySelectorAll(child).forEach(function(node) {
-                        node == e.target && listener.call(e.target, e);
-                    });
-                }
-            };
-            if (element.uEvent || (element.uEvent = {}), element.uEvent[eventName]) {
-                var lis = child ? childlistener : listener, hasLis = !1;
-                element.uEvent[eventName].forEach(function(fn) {
-                    fn == lis && (hasLis = !0);
-                }), hasLis || element.uEvent[eventName].push(child ? childlistener : listener);
-            } else element.uEvent[eventName] = [ child ? childlistener : listener ], u.event && u.event[eventName] && u.event[eventName].setup && u.event[eventName].setup.call(element), 
-            element.uEvent[eventName + "fn"] = function(e) {
-                e || (e = void 0 !== event && event ? event : window.event), element.uEvent[eventName].forEach(function(fn) {
-                    try {
-                        e.target = e.target || e.srcElement;
-                    } catch (ee) {}
-                    fn && fn.call(element, e);
-                });
-            }, element.addEventListener ? element.addEventListener(eventName, element.uEvent[eventName + "fn"]) : element.attachEvent ? element.attachEvent("on" + eventName, element.uEvent[eventName + "fn"]) : element["on" + eventName] = element.uEvent[eventName + "fn"];
-        }
-    }, off = function(element, eventName, listener) {
-        if (listener) return void (element && element.uEvent && element.uEvent[eventName] && element.uEvent[eventName].forEach(function(fn, i) {
-            fn == listener && element.uEvent[eventName].splice(i, 1);
-        }));
-        var eventfn;
-        element && element.uEvent && element.uEvent[eventName + "fn"] && (eventfn = element.uEvent[eventName + "fn"]), 
-        element.removeEventListener ? element.removeEventListener(eventName, eventfn) : element.removeEvent ? element.removeEvent("on" + eventName, eventfn) : delete element["on" + eventName], 
-        u.event && u.event[eventName] && u.event[eventName].teardown && u.event[eventName].teardown.call(element), 
-        element && element.uEvent && element.uEvent[eventName] && (element.uEvent[eventName] = void 0), 
-        element && element.uEvent && element.uEvent[eventName + "fn"] && (element.uEvent[eventName + "fn"] = void 0);
-    }, trigger = function(element, eventName) {
+    var trigger = function(element, eventName) {
         element.uEvent && element.uEvent[eventName] && element.uEvent[eventName + "fn"]();
     };
-}, function(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-    function _classCallCheck(instance, Constructor) {
-        if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
-    }
-    Object.defineProperty(__webpack_exports__, "__esModule", {
-        value: !0
-    });
-    var __WEBPACK_IMPORTED_MODULE_0__server_dataTable__ = __webpack_require__(3), __WEBPACK_IMPORTED_MODULE_1__server_fire__ = __webpack_require__(4), __WEBPACK_IMPORTED_MODULE_2__server_processXHRError__ = __webpack_require__(5), __WEBPACK_IMPORTED_MODULE_3__server_util__ = __webpack_require__(6), ServerEvent = function ServerEvent(app) {
-        _classCallCheck(this, ServerEvent), this.app = app, this.datas = {}, this.params = {}, 
-        this.event = null, this.ent = u.core.collectEnvironment(), u.debugMode || (this.compression = !0);
-    };
-    ServerEvent.prototype.addDataTable = __WEBPACK_IMPORTED_MODULE_0__server_dataTable__.a, 
-    ServerEvent.prototype.addDataTables = __WEBPACK_IMPORTED_MODULE_0__server_dataTable__.b, 
-    ServerEvent.prototype.addAllDataTables = __WEBPACK_IMPORTED_MODULE_0__server_dataTable__.c, 
-    ServerEvent.prototype.updateDataTables = __WEBPACK_IMPORTED_MODULE_0__server_dataTable__.d, 
-    ServerEvent.prototype.fire = __WEBPACK_IMPORTED_MODULE_1__server_fire__.a, ServerEvent.prototype.setSuccessFunc = __WEBPACK_IMPORTED_MODULE_1__server_fire__.b, 
-    ServerEvent.prototype._successFunc = __WEBPACK_IMPORTED_MODULE_1__server_fire__.c, 
-    ServerEvent.prototype.processXHRError = __WEBPACK_IMPORTED_MODULE_2__server_processXHRError__.a, 
-    ServerEvent.prototype.setCompression = __WEBPACK_IMPORTED_MODULE_3__server_util__.a, 
-    ServerEvent.prototype.addParameter = __WEBPACK_IMPORTED_MODULE_3__server_util__.b, 
-    ServerEvent.prototype.setEvent = __WEBPACK_IMPORTED_MODULE_3__server_util__.c, ServerEvent.prototype.getData = __WEBPACK_IMPORTED_MODULE_3__server_util__.d, 
-    ServerEvent.prototype.updateDom = __WEBPACK_IMPORTED_MODULE_3__server_util__.e, 
-    ServerEvent.DEFAULT = {
-        async: !0,
-        singleton: !0,
-        url: (window.$ctx || "/iwebap") + "/evt/dispatch"
-    }, window.ServerEvent = ServerEvent;
 } ]);
