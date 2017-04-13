@@ -13,6 +13,7 @@
     * [._successFunc(data, deferred)](#ServerEvent._successFunc)
     * [.setSuccessFunc(func)](#ServerEvent.setSuccessFunc)
     * [.processXHRError(self, rsl, state, xhr)](#ServerEvent.processXHRError)
+    * [.setCompression(compression)](#ServerEvent.setCompression)
     * [.add参数eter(key, value)](#ServerEvent.add参数eter)
     * [.setEvent(event)](#ServerEvent.setEvent)
     * [.getData()](#ServerEvent.getData)
@@ -104,6 +105,16 @@
 | rsl | <code>string</code> | [description] |
 | state | <code>object</code> | [description] |
 | xhr | <code>object</code> | [description] |
+
+<a name="ServerEvent.setCompression"></a>
+
+### ServerEvent.setCompression(compression)
+[description]
+
+
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| compression | <code>boolean</code> | [description] |
 
 <a name="ServerEvent.add参数eter"></a>
 

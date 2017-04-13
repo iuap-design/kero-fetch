@@ -33,5 +33,5 @@ gulp.task('docs', function() {
 
 
 
-    produceAPI(dtAbsolutePath, 'IE.md');
+    produceAPI(dtAbsolutePath, 'kero-fetch.md');
 })
