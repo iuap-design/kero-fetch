@@ -30,6 +30,12 @@ import {
     updateDom
 } from './server-util'
 
+
+/**
+ * ServerEvent
+ * @namespace
+ * @description 前端请求事件
+ */
 class ServerEvent {
     constructor(app){
 

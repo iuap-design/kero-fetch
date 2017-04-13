@@ -4,6 +4,15 @@
  * Date   : 2016-07-29 09:34:01
  */
 
+
+/**
+ * [description]
+ * @memberof ServerEvent
+ * @param  {object} self  [description]
+ * @param  {string} rsl   [description]
+ * @param  {object} state [description]
+ * @param  {object} xhr   [description]
+ */
 const processXHRError = function (self, rsl, state, xhr) {
     if (typeof rsl === 'string')
         rsl = JSON.parse(rsl)

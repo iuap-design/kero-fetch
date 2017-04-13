@@ -6,6 +6,12 @@
 import {extend} from 'tinper-sparrow/src/extend';
 import {ajax} from 'tinper-sparrow/src/ajax';
 
+/**
+ * 前端缓存:前端会存储所有页的数据信息
+ * @memberof ServerEvent
+ * @param  {string} p [description]
+ *
+ */
 const fire = function (p) {
     var self = this
     var data = this.getData();
@@ -68,6 +74,12 @@ const fire = function (p) {
         ajax(params)
 }
 
+/**
+ * 数据请求成功后的回调方法实现
+ * @memberof ServerEvent
+ * @param  {json} data     请求返回的数据
+ * @param  {string} deferred deferred
+ */
 const _successFunc = function (data, deferred) {
     if (typeof data === 'string')
         data = JSON.parse(data)
@@ -81,6 +93,11 @@ const _successFunc = function (data, deferred) {
 
 
 
+/**
+ * 设置成功回调方法
+ * @memberof ServerEvent
+ * @param  {function} func 函数的名字
+ */
 const setSuccessFunc = function (func) {
     this._successFunc = func
 }

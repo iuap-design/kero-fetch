@@ -3,20 +3,30 @@
  * Author : liuyk(liuyk@yonyou.com)
  * Date	  : 2016-07-29 09:34:01
  */
-import {isArray} from 'tinper-sparrow/src/util';
+import {
+    isArray
+} from 'tinper-sparrow/src/util';
 
-const addDataTable = function (dataTableId, rule) {
+/**
+ * 增加一个datatable
+ * @memberof ServerEvent
+ * @param  {number} dataTableId dataTable的id：唯一标示
+ * @param  {string} rule        dataTable的规则
+ *
+ */
+const addDataTable = function(dataTableId, rule) {
     var dataTable = this.app.getDataTable(dataTableId)
     this.datas[dataTableId] = dataTable.getDataByRule(rule)
     return this
 }
 
 /**
+ * 增加多个datatable
+ * @memberof ServerEvent
+ * @param  {array} dataTables dataTable的数组
  *
- * @param {Object} dataTabels
- * 格式1: ['dt1',{'dt2':'all'}]，格式2：['dt1', 'dt2']，格式3: ['dt1', 'dt2'], 'all'
  */
-const addDataTables = function (dataTables) {
+const addDataTables = function(dataTables) {
     if (arguments.length == 2) {
         for (var i = 0; i < dataTables.length; i++) {
             var rule;
@@ -38,18 +48,30 @@ const addDataTables = function (dataTables) {
             }
         }
     }
-
     return this
 }
 
-const addAllDataTables = function (rule) {
+/**
+ * 将rule对着匹配的datatable列表全部加入进来
+ * @memberof ServerEvent
+ * @param  {string} rule dataTable的规则
+ *
+ */
+const addAllDataTables = function(rule) {
     var dts = this.app.dataTables
     for (var i = 0; i < dts.length; i++) {
         this.addDataTable(dts[i].id, rule)
     }
 }
 
-const updateDataTables = function (dataTables, deferred) {
+/**
+ * 将datable的列表更新
+ * @memberof ServerEvent
+ * @param  {array} dataTables dataTable的列表
+ * @param  {string} deferred 
+ *
+ */
+const updateDataTables = function(dataTables, deferred) {
     for (var key in dataTables) {
         var dt = this.app.getDataTable(key)
         if (dt) {
@@ -60,8 +82,8 @@ const updateDataTables = function (dataTables, deferred) {
 }
 
 export {
-	addDataTable,
-	addDataTables,
-	addAllDataTables,
-	updateDataTables
+    addDataTable,
+    addDataTables,
+    addAllDataTables,
+    updateDataTables
 }
