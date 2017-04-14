@@ -9,9 +9,11 @@ import {env} from 'tinper-sparrow/src/env';
 
 
 /**
- * 设置数据是否压缩
+ * 设置数据是否压缩，fire方法默认是false
  * @memberof ServerEvent
  * @param  {boolean} compression 是否压缩的参数值
+ * @example
+ * app.serverEvent().setCompression(true)
  */
 const setCompression = function (compression) {
     if (!env.isIE8 && !window.pako && compression == true)
@@ -25,6 +27,8 @@ const setCompression = function (compression) {
  * @memberof ServerEvent
  * @param  {string} key   参数key
  * @param  {string} value 参数value
+ * @example
+ * app.serverEvent().addParameter('key', 'value')
  */
 const addParameter = function (key, value) {
     this.params[key] = value
@@ -32,9 +36,13 @@ const addParameter = function (key, value) {
 }
 
 /**
- * 为fire的ajax请求参数中设置事件参数
+ * 为fire的ajax请求参数中设置事件参数,设置到params.data.event上面
  * @memberof ServerEvent
- * @param  {string} event 事件名
+ * @param  {string} event 事件
+ * @example
+ * app.serverEvent().setEvent(function(){
+ *  。。。。。
+ * })
  */
 const setEvent = function (event) {
     this.event = _formatEvent(event)

@@ -5,7 +5,7 @@
  */
 
 
-/**
+/****
  * 通过去判断请求头来验证请求是否成功
  * @memberof ServerEvent
  * @param  {object} self  ServerEvent的this对象
