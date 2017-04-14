@@ -9,9 +9,9 @@ import {env} from 'tinper-sparrow/src/env';
 
 
 /**
- * [description]
+ * 设置数据是否压缩
  * @memberof ServerEvent
- * @param  {boolean} compression [description]
+ * @param  {boolean} compression 是否压缩的参数值
  */
 const setCompression = function (compression) {
     if (!env.isIE8 && !window.pako && compression == true)
@@ -21,7 +21,7 @@ const setCompression = function (compression) {
 }
 
 /**
- * 设置参数
+ * 为fire方法添加请求参数
  * @memberof ServerEvent
  * @param  {string} key   参数key
  * @param  {string} value 参数value
@@ -32,7 +32,7 @@ const addParameter = function (key, value) {
 }
 
 /**
- * 设置事件
+ * 为fire的ajax请求参数中设置事件参数
  * @memberof ServerEvent
  * @param  {string} event 事件名
  */
@@ -46,10 +46,7 @@ var _formatEvent = function (event) {
     return event
 }
 
-/**
- * 获取数据
- * @memberof ServerEvent
- */
+//获取会话等参数数据，并将参数传递到fire参数中
 const getData = function () {
     var envJson = ko.utils.stringifyJson(this.app.getEnvironment()),
         datasJson = ko.utils.stringifyJson(this.datas, function replacer(key, value) {
@@ -80,10 +77,7 @@ const getData = function () {
 }
 
 
-/**
- * 更新dom节点
- * @memberof ServerEvent
- */
+//iuap_quickstart项目中没有，不太清楚该功能
 const updateDom = function () {
     each(dom, function (i, n) {
         var vo = n.two
@@ -93,12 +87,7 @@ const updateDom = function () {
 }
 
 //TODO 去除jQuery后有问题待修改
-/**
- * 更新dom节点
- * @memberof ServerEvent
- * @param  {string} key description
- * @param  {array} vos description
- */
+//iuap_quickstart项目中没有，不太清楚该功能
 function _updateDom(key, vos) {
     for (var i in vos) {
         var vo = vos[i]

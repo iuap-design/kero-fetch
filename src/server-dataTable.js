@@ -11,8 +11,17 @@ import {
  * 增加一个datatable
  * @memberof ServerEvent
  * @param  {number} dataTableId dataTable的id：唯一标示
- * @param  {string} rule        dataTable的规则
- *
+ * @param  {string} rule
+ * DataTable.SUBMIT.current('current') ：当前选中行
+ * DataTable.SUBMIT.focus('focus') ：当前focus行
+ * DataTable.SUBMIT.all('all') ：所有行
+ * DataTable.SUBMIT.select('select') ：当前页选中行
+ * DataTable.SUBMIT.change('change') ：发生改变的行
+ * DataTable.SUBMIT.empty('empty') ：不获取数据，返回空数组
+ * DataTable.SUBMIT.allSelect('allSelect') ：所有页选中行
+ * DataTable.SUBMIT.allPages('allPages') ：所有页的数据
+ * @example
+ * ServerEvent.addDataTable('datatableid','all')
  */
 const addDataTable = function(dataTableId, rule) {
     var dataTable = this.app.getDataTable(dataTableId)
@@ -24,7 +33,8 @@ const addDataTable = function(dataTableId, rule) {
  * 增加多个datatable
  * @memberof ServerEvent
  * @param  {array} dataTables dataTable的数组
- *
+ * @example
+ * ServerEvent.addDataTables([datatable,datatable1,datatable2])
  */
 const addDataTables = function(dataTables) {
     if (arguments.length == 2) {
@@ -54,8 +64,17 @@ const addDataTables = function(dataTables) {
 /**
  * 将rule对着匹配的datatable列表全部加入进来
  * @memberof ServerEvent
- * @param  {string} rule dataTable的规则
- *
+ * @param  {string} rule
+ * DataTable.SUBMIT.current('current') ：当前选中行
+ * DataTable.SUBMIT.focus('focus') ：当前focus行
+ * DataTable.SUBMIT.all('all') ：所有行
+ * DataTable.SUBMIT.select('select') ：当前页选中行
+ * DataTable.SUBMIT.change('change') ：发生改变的行
+ * DataTable.SUBMIT.empty('empty') ：不获取数据，返回空数组
+ * DataTable.SUBMIT.allSelect('allSelect') ：所有页选中行
+ * DataTable.SUBMIT.allPages('allPages') ：所有页的数据
+ * @example
+ * ServerEvent.addAllDataTables('all')
  */
 const addAllDataTables = function(rule) {
     var dts = this.app.dataTables
@@ -64,14 +83,8 @@ const addAllDataTables = function(rule) {
     }
 }
 
-/**
- * 将datable的列表更新
- * @memberof ServerEvent
- * @param  {array} dataTables dataTable的列表
- * @param  {string} deferred 
- *
- */
-const updateDataTables = function(dataTables, deferred) {
+//将datable的列表更新
+const updateDataTables = function(dataTables) {
     for (var key in dataTables) {
         var dt = this.app.getDataTable(key)
         if (dt) {

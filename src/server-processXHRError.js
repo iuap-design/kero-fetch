@@ -6,12 +6,12 @@
 
 
 /**
- * [description]
+ * 通过去判断请求头来验证请求是否成功
  * @memberof ServerEvent
- * @param  {object} self  [description]
- * @param  {string} rsl   [description]
- * @param  {object} state [description]
- * @param  {object} xhr   [description]
+ * @param  {object} self  ServerEvent的this对象
+ * @param  {object} rsl   请求返回的数据
+ * @param  {object} state 描述状态的字符串
+ * @param  {object} xhr   jqXHR对象
  */
 const processXHRError = function (self, rsl, state, xhr) {
     if (typeof rsl === 'string')

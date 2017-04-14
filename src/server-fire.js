@@ -8,9 +8,80 @@ import {ajax} from 'tinper-sparrow/src/ajax';
 
 /**
  * 前端缓存:前端会存储所有页的数据信息
+ * fire方法发出去的参数模型
+ * {
+     "environment": {
+         "clientAttributes": {}
+     },
+     "dataTables": {
+         "dictTypeDa": {
+             "meta": {
+                 ...
+             },
+             "params": {
+                 "cls": "com.yonyou.iuap.example.entity.mybatis.SysDictType",
+                 "search_dicttypecode": "",
+                 "search_dicttypename": ""
+             },
+             "pages": [{
+                 "index": 0,
+                 "select": [],
+                 "focus": -1,
+                 "rows": []
+             }],
+             "pageSize": 5,
+             "pageIndex": 0,
+             "isChanged": false,
+             "master": "",
+             "pageCache": true
+         }
+     },
+     "compression": false,
+     "compressType": "",
+     "parameters": {}
+ * }
+ * fire方法返回的数据模型
+ * {
+     "dataTables": {
+         "dictTypeDa": {
+             "pageSize": 5,
+             "pageIndex": 0,
+             "totalPages": 5,
+             "totalRow": 25,
+             "pages": [{
+                 "index": 0,
+                 "select": [],
+                 "current": -1,
+                 "rows": [{
+                     "id": "r22901",
+                     "status": "nrm",
+                     "data": {
+                         ...
+                     }
+                 }...]
+             }],
+             "meta": null
+         }
+     },
+     "comps": "",
+     "custom": "",
+     "contentType": ""
+ * }
  * @memberof ServerEvent
- * @param  {string} p [description]
- *
+ * @param  {object} p 请求的json参数字段，必须包含url
+ * @param  {string} p.url 请求地址
+ * @param  {string} [p.type] 请求类型
+ * @param  {string} [p.success] 请求成功回调方法
+ * @param  {string} [p.error] 请求失败回调方法
+ * @example
+ * app.serverEvent().addDataTable('dataTableid').fire({
+ *  type:"get",
+ *  url:"..../list",
+ *  success:function(data){
+ *  },
+ *  error:function(data){
+ *  }
+ * })
  */
 const fire = function (p) {
     var self = this
@@ -74,12 +145,11 @@ const fire = function (p) {
         ajax(params)
 }
 
-/**
- * 数据请求成功后的回调方法实现
- * @memberof ServerEvent
- * @param  {json} data     请求返回的数据
- * @param  {string} deferred deferred
- */
+//数据请求成功后的回调方法实现
+//deferred对象是从jQuery 1.5.0版本开始引入的
+//deferred对象有三种执行状态----未完成，已完成和已失败
+//deferred.resolve()，将deferred对象的执行状态从"未完成"改为"已完成"，从而触发success()方法。
+//deferred.reject()，将deferred对象的执行状态从"未完成"改为"已失败"，从而触发error()方法。
 const _successFunc = function (data, deferred) {
     if (typeof data === 'string')
         data = JSON.parse(data)
@@ -93,11 +163,7 @@ const _successFunc = function (data, deferred) {
 
 
 
-/**
- * 设置成功回调方法
- * @memberof ServerEvent
- * @param  {function} func 函数的名字
- */
+//设置成功回调方法
 const setSuccessFunc = function (func) {
     this._successFunc = func
 }
