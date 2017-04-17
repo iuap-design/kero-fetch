@@ -41,7 +41,7 @@ const addParameter = function (key, value) {
  * @param  {string} event 事件
  * @example
  * app.serverEvent().setEvent(function(){
- *  。。。。。
+ *  ...
  * })
  */
 const setEvent = function (event) {

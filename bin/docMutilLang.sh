@@ -9,9 +9,9 @@ replaceStr=(参数 返回值 类型 描述)
 # 考虑到会把方法addParameter中的Param转为中文参数，所以在这里做点处理：
 # 先将Parameter转为opqrst---tsrqpo，
 # 然后等上面的转完之后，再转回来
-sourceStr1=(Parameter)
+sourceStr1=(Parameter Returns Type Description)
 
-replaceStr1=(opqrsttsrqpo)
+replaceStr1=(opqrsttsrqpo abcddcba efghhgfe uvwxyzzyxwvu)
 
 sysOS=`uname -s`
 

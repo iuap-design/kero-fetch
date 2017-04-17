@@ -12,11 +12,11 @@ import {
  * @memberof ServerEvent
  * @param  {number} dataTableId dataTable的id：唯一标示
  * @param  {string} rule
- * all：所有数据
- * current：当前行数据
- * focus：焦点行数据
- * select：选中行数据
- * change：发生改变的数据
+ * all：所有数据；
+ * current：当前行数据；
+ * focus：焦点行数据；
+ * select：选中行数据；
+ * change：发生改变的数据；
  * @example
  * app.serverEvent().addDataTable('datatableid','all')
  */
@@ -31,11 +31,11 @@ const addDataTable = function(dataTableId, rule) {
  * @memberof ServerEvent
  * @param  {array} dataTables dataTable的数组
  * @param  {string} rule
- * all：所有数据
- * current：当前行数据
- * focus：焦点行数据
- * select：选中行数据
- * change：发生改变的数据
+ * all：所有数据；
+ * current：当前行数据；
+ * focus：焦点行数据；
+ * select：选中行数据；
+ * change：发生改变的数据；
  * @example
  * app.serverEvent().addDataTables([datatableId,datatableId1,datatableId2],'all')
  */
@@ -68,14 +68,11 @@ const addDataTables = function(dataTables, rule) {
  * 将rule对着匹配的datatable列表全部加入进来
  * @memberof ServerEvent
  * @param  {string} rule
- * DataTable.SUBMIT.current('current') ：当前选中行
- * DataTable.SUBMIT.focus('focus') ：当前focus行
- * DataTable.SUBMIT.all('all') ：所有行
- * DataTable.SUBMIT.select('select') ：当前页选中行
- * DataTable.SUBMIT.change('change') ：发生改变的行
- * DataTable.SUBMIT.empty('empty') ：不获取数据，返回空数组
- * DataTable.SUBMIT.allSelect('allSelect') ：所有页选中行
- * DataTable.SUBMIT.allPages('allPages') ：所有页的数据
+ * all：所有数据；
+ * current：当前行数据；
+ * focus：焦点行数据；
+ * select：选中行数据；
+ * change：发生改变的数据；
  * @example
  * app.serverEvent().addAllDataTables('all')
  */

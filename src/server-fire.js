@@ -8,7 +8,22 @@ import {ajax} from 'tinper-sparrow/src/ajax';
 
 /**
  * 前端缓存:前端会存储所有页的数据信息
- * fire方法发出去的参数模型
+ * @memberof ServerEvent
+ * @param  {object} p 请求的json参数字段，必须包含url
+ * @param  {string} p.url 请求地址
+ * @param  {string} [p.type] 请求类型
+ * @param  {string} [p.success] 请求成功回调方法
+ * @param  {string} [p.error] 请求失败回调方法
+ * @example <caption>fire方法的使用示例</caption>
+ * app.serverEvent().addDataTable('dataTableid').fire({
+ *  type:"get",
+ *  url:"..../list",
+ *  success:function(data){
+ *  },
+ *  error:function(data){
+ *  }
+ * })
+ * @example <caption>fire方法传递给后台的数据示例</caption>
  * {
      "environment": {
          "clientAttributes": {}
@@ -40,7 +55,7 @@ import {ajax} from 'tinper-sparrow/src/ajax';
      "compressType": "",
      "parameters": {}
  * }
- * fire方法返回的数据模型
+ * @example <caption>fire方法后台返回的数据示例</caption>
  * {
      "dataTables": {
          "dictTypeDa": {
@@ -67,21 +82,6 @@ import {ajax} from 'tinper-sparrow/src/ajax';
      "custom": "",
      "contentType": ""
  * }
- * @memberof ServerEvent
- * @param  {object} p 请求的json参数字段，必须包含url
- * @param  {string} p.url 请求地址
- * @param  {string} [p.type] 请求类型
- * @param  {string} [p.success] 请求成功回调方法
- * @param  {string} [p.error] 请求失败回调方法
- * @example
- * app.serverEvent().addDataTable('dataTableid').fire({
- *  type:"get",
- *  url:"..../list",
- *  success:function(data){
- *  },
- *  error:function(data){
- *  }
- * })
  */
 const fire = function (p) {
     var self = this
