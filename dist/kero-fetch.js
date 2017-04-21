@@ -1,5 +1,5 @@
 /*!
- * kero-fetch v3.2.0
+ * kero-fetch v3.2.1
  * kero-fetch - 基于 Promise 实现的 http 库
  * author : 
  * homepage : https://github.com/iuap-design/kero-fetch#readme
@@ -170,7 +170,7 @@
     var addDataTable = function(dataTableId, rule) {
         var dataTable = this.app.getDataTable(dataTableId);
         return this.datas[dataTableId] = dataTable.getDataByRule(rule), this;
-    }, addDataTables = function(dataTables) {
+    }, addDataTables = function(dataTables, rule) {
         if (2 == arguments.length) for (var i = 0; i < dataTables.length; i++) {
             var rule;
             "string" == typeof arguments[1] ? rule = arguments[1] : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_tinper_sparrow_src_util__.b)(arguments[1]) && (rule = arguments[1][i]), 
@@ -182,7 +182,7 @@
         return this;
     }, addAllDataTables = function(rule) {
         for (var dts = this.app.dataTables, i = 0; i < dts.length; i++) this.addDataTable(dts[i].id, rule);
-    }, updateDataTables = function(dataTables, deferred) {
+    }, updateDataTables = function(dataTables) {
         for (var key in dataTables) {
             var dt = this.app.getDataTable(key);
             dt && (dt.setData(dataTables[key]), dt.updateMeta(dataTables[key].meta));
