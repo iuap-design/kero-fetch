@@ -1,5 +1,5 @@
 /**
- * kero-fetch v3.2.1
+ * kero-fetch v3.2.2
  * kero-fetch - 基于 Promise 实现的 http 库
  * author :
  * homepage : https://github.com/iuap-design/kero-fetch#readme
