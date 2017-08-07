@@ -32,7 +32,7 @@ import {
 
 
 /**
- * ServerEvent
+ * ServerEvent，这个主要是使用fire方法，现暂时使用场景很少
  * @namespace
  * @description 前端请求事件
  */
